@@ -8,16 +8,116 @@
 </head>
 <body>
   <header>
-    <h1>The Save The World Wiki</h1>
+    <h1>Save The World Wiki</h1>
+    <h2></h2>
+    <nav>
+      <ul>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#weapons">Weapons</a></li>
+        <li><a href="#traps">Traps</a></li>
+        <li><a href="#items">Items</a></li>
+        <li><a href="#zones">Zones</a></li>
+        <li><a href="#misc">Miscellaneous</a></li>
+      </ul>
+    </nav>
   </header>
-  
-  <section>
-    <h2>Under Construction</h2>
-    <p>The Save The World Wiki is currently under construction. <br> Join the discord for updates discord.gg/kQXTMbMQZZ<br> Thank you for your patience!</p>
-  </section>
 
-  <footer>
-    <p>last updated 12/10/2024</p>
-  </footer>
+  <section id="characters">
+    <h2>Characters</h2>
+    <div class="sorting-buttons">
+      <button class="filter-button" data-filter="all" data-target="character">All</button>
+      <button class="filter-button" data-filter="hero" data-target="character">Heroes</button>
+      <button class="filter-button" data-filter="survivors" data-target="character">Survivors</button>
+      <button class="filter-button" data-filter="defenders" data-target="character">Defenders</button>
+      <button class="filter-button" data-filter="robot" data-target="character">Robots</button>
+      <button class="filter-button" data-filter="husk" data-target="character">Husks</button>
+      <button class="filter-button" data-filter="other" data-target="character">Others</button>
+    </div>
+    <div class="character-list">
+      <a href="./Pages/chars/sleuth.html" class="character" data-role="Heroes" data-team="homebase">
+        <img src="./images/chars/Sleuth.png" alt="Sleuth">
+      </a>
+    </div>
+</section>
+
+<section id="weapons">
+    <h2>Weapons (COMING SOON!)</h2>
+    <div class="sorting-buttons">
+      <button class="filter-button" data-filter="all" data-target="weapons">All</button>
+      <button class="filter-button" data-filter="smg" data-target="weapons">SMG</button>
+      <button class="filter-button" data-filter="assault" data-target="weapons">Assault</button>
+      <button class="filter-button" data-filter="explosive" data-target="weapons">Explosive</button>
+      <button class="filter-button" data-filter="launcher" data-target="weapons">Launcher</button>
+      <button class="filter-button" data-filter="pistol" data-target="weapons">Pistol</button>
+      <button class="filter-button" data-filter="shotgun" data-target="weapons">Shotgun</button>
+      <button class="filter-button" data-filter="sniper" data-target="weapons">Sniper</button>
+      <button class="filter-button" data-filter="melee" data-target="weapons">Melee</button>
+    </div>
+    <div class="weapons-list">
+      <a href="./Pages/weapons/" class="weapons" data-role="assault">
+        <img src="./images/weapons/" alt="">
+      </a>
+    </div>
+</section>
+<section id="traps">
+  <h2>Traps (COMING SOON!)</h2>
+  <div class="sorting-buttons">
+    <button class="filter-button" data-filter="all" data-target="traps">All</button>
+    <button class="filter-button" data-filter="wall" data-target="traps">Wall</button>
+    <button class="filter-button" data-filter="floor" data-target="traps">Floor</button>
+    <button class="filter-button" data-filter="ceiling" data-target="traps">Ceiling</button>
+  </div>
+  <div class="traps-list">
+    <a href="./Pages/traps/" class="traps" data-role="floor">
+      <img src="./images/traps/" alt="">
+    </a>
+  </div>
+</section>
+<section id="items">
+    <h2>Items (COMING SOON!)</h2>
+    <div class="sorting-buttons">
+      <button class="filter-button" data-filter="all" data-target="item">All</button>
+      <button class="filter-button" data-filter="ammo" data-target="item">Ammo</button>
+      <button class="filter-button" data-filter="craft" data-target="item">Crafting</button>
+      <button class="filter-button" data-filter="evo" data-target="item">Evo</button>
+      <button class="filter-button" data-filter="flux" data-target="item">Flux</button>
+      <button class="filter-button" data-filter="other" data-target="item">Others</button>
+    </div>
+    <div class="item-list">
+      <a href="./Pages/items/" class="item" data-role="other">
+        <img src="" alt="">
+      </a>
+    </div>
+</section>
+<section id="zones">
+  <h2>Zones (COMING SOON!)</h2>
+  <div class="sorting-buttons">
+    <button class="filter-button" data-filter="all" data-target="zones">All</button>
+    <button class="filter-button" data-filter="main" data-target="zones">Main</button>
+    <button class="filter-button" data-filter="ventures" data-target="zones">Ventures</button>
+    <button class="filter-button" data-filter="others" data-target="zones">Others</button>
+
+  </div>
+  <div class="zones-list">
+    <a href="./Pages/zones/" class="zones" data-role="">
+      <img src="./images/zones/" alt="">
+    </a>
+  </div>
+</section>
+<section id="misc">
+  <h2>Miscellaneous (COMING SOON!)</h2>
+  <div class="sorting-buttons">
+    <button class="filter-button" data-filter="all" data-target="misc">All</button>
+  </div>
+  <div class="misc-list">
+    <a href="./Pages/misc/" class="misc" data-role="other">
+      <img src="./images/misc/" alt="">
+    </a>
+  </div>
+</section>
+<footer>
+  <p>&copy; 2024 Save The World Wiki <br> Fortnite is a registered trademark of Epic Games. <br>This is not affilliated, or endorsed, by Epic Games.</p>
+</footer>
+  <script src="script.js"></script>
 </body>
 </html>
