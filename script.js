@@ -62,7 +62,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
       showMoreButton.textContent = isExpanded ? 'Show More' : 'Show Less';
-      list.appendChild(showMoreButton); // Ensure button stays at the bottom
+      list.appendChild(showMoreButton);
+    });
+  });
+
+  const searchBar = document.getElementById('search-bar');
+  searchBar.addEventListener('input', () => {
+    const query = searchBar.value.toLowerCase();
+    sections.forEach(section => {
+      const list = document.querySelector(`.${section}-list`);
+      const items = list.querySelectorAll(`.${section}`);
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const role = item.getAttribute('data-role').toLowerCase();
+        if (text.includes(query) || role.includes(query)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
     });
   });
 });
