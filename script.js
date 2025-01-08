@@ -35,4 +35,34 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  const sections = ['character', 'weapons', 'traps', 'item', 'zones', 'misc'];
+  
+  sections.forEach(section => {
+    const list = document.querySelector(`.${section}-list`);
+    const items = list.querySelectorAll(`.${section}`);
+    const showMoreButton = document.createElement('button');
+    showMoreButton.classList.add('show-more-button');
+    showMoreButton.textContent = 'Show More';
+    
+    if (items.length > 10) {
+      items.forEach((item, index) => {
+        if (index >= 10) {
+          item.style.display = 'none';
+        }
+      });
+      list.appendChild(showMoreButton);
+    }
+
+    showMoreButton.addEventListener('click', () => {
+      const isExpanded = showMoreButton.textContent === 'Show Less';
+      items.forEach((item, index) => {
+        if (index >= 10) {
+          item.style.display = isExpanded ? 'none' : 'block';
+        }
+      });
+      showMoreButton.textContent = isExpanded ? 'Show More' : 'Show Less';
+      list.appendChild(showMoreButton); // Ensure button stays at the bottom
+    });
+  });
 });
