@@ -303,3 +303,22 @@ a:hover {
   text-align: center;
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 2vh;
+  right: 2vh;
+  padding: 1vh 2vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #029923;
+  border: 2px solid #029923;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: none; 
+}
+
+.back-to-top:hover {
+  background-color: rgba(0, 255, 0, 0.5);
+  transform: scale(1.05);
+}
+
