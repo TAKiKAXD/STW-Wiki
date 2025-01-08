@@ -169,6 +169,7 @@ a:hover {
   margin-bottom: 1vh;
   font-size: 2.5vh;
   color: #029923;
+  text-align: center;
 }
   
 .sorting-buttons {
@@ -293,5 +294,12 @@ a:hover {
 #search-bar::placeholder {
   color: #029923;
   text-shadow: 0 0 5px rgba(88, 216, 3, 0.6);
+}
+
+.navigation-label {
+  margin-bottom: 1vh;
+  font-size: 2.5vh;
+  color: #029923;
+  text-align: center;
 }
 
