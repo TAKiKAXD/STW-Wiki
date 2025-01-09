@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  console.log("DOMContentLoaded event fired");
+
   const filterButtons = document.querySelectorAll('.filter-button');
 
   filterButtons.forEach(button => {
