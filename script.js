@@ -40,10 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       console.log(`Loading data for section: ${section}`);
       const response = await fetch(`./data/${section}.json`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const data = await response.json();
       console.log(`Data loaded for section ${section}:`, data);
       const list = document.querySelector(`.${section}-list`);
-      list.innerHTML = ''; 
+      if (!list) {
+        console.error(`List element for section ${section} not found.`);
+        return;
+      }
+      list.innerHTML = ''; // Clear existing content
 
       data.items.forEach(item => {
         console.log(`Creating item for ${section}:`, item);
@@ -60,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         link.appendChild(img);
         list.appendChild(link);
+        console.log(`Appended item to ${section}-list:`, link);
       });
     } catch (error) {
       console.error(`Failed to load ${section} data:`, error);
