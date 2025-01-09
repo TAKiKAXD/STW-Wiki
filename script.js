@@ -75,7 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
       items.forEach(item => {
         const text = item.textContent.toLowerCase();
         const role = item.getAttribute('data-role').toLowerCase();
-        if (text.includes(query) || role.includes(query)) {
+        const team = item.getAttribute('data-team') ? item.getAttribute('data-team').toLowerCase() : '';
+        const name = item.getAttribute('data-name') ? item.getAttribute('data-name').toLowerCase() : '';
+        if (text.includes(query) || role.includes(query) || team.includes(query) || name.includes(query)) {
           item.style.display = 'block';
         } else {
           item.style.display = 'none';
