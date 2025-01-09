@@ -2,7 +2,7 @@
   font-family: 'Burbank Big Condensed Black';
   src: url('./fonts/font.otf');
 }
-  
+
 body {
   color: #029923;
   font-size: 2.2vh;
@@ -10,8 +10,11 @@ body {
   line-height: 4vh;
   background-image: radial-gradient(#001f03, black 120%);
   text-shadow: 0 0 5px rgba(88, 216, 3, 0.6);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
-  
+
 body::after {
   content: '';
   position: fixed;
@@ -22,42 +25,52 @@ body::after {
   background: repeating-linear-gradient(rgba(255, 78, 0, 0.03) 0.5vh, rgba(0, 0, 0, 0.05) 0.8vh);
   z-index: -1;
 }
-  
+
 ::-webkit-scrollbar {
   width: 1vw;
 }
-  
+
 ::-webkit-scrollbar-track {
   background: #000;
 }
-  
+
 ::-webkit-scrollbar-thumb {
   background: #000;
 }
-  
+
 header {
   text-align: center;
   margin: 2vh 0;
 }
+
 footer {
   text-align: center;
+  padding: 2vh 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #88ff88;
+  font-size: 1.8vh;
 }
-  
+
 nav ul {
   list-style-type: none;
   padding: 0;
 }
-  
+
 nav ul li {
   display: inline;
   margin-right: 3vw;
 }
-  
+
 nav ul li a {
   color: #029923;
   text-decoration: none;
+  transition: color 0.3s;
 }
-  
+
+nav ul li a:hover {
+  color: #88ff88;
+}
+
 section {
   padding: 2vh;
   margin: 2vh auto;
@@ -65,119 +78,56 @@ section {
   border-radius: 10px;
   max-width: 80vw;
 }
-  
-.character {
+
+.character, .weapons, .traps, .item, .misc, .zones, .missions {
   border: 0px solid rgba(0, 255, 0, 0.5);
   padding: 2vh;
   margin-bottom: 2vh;
   background-color: rgba(0, 0, 0, 0.5);
   position: relative;
 }
-  
-.character img {
+
+.character img, .weapons img, .traps img, .item img, .misc img, .zones img, .missions img {
   max-width: 100px;
   display: block;
   margin: 0 auto;
 }
-.weapons {
-  border: 0px solid rgba(0, 255, 0, 0.5);
-  padding: 2vh;
-  margin-bottom: 2vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-  
-.weapons img {
-  max-width: 100px;
-  display: block;
-  margin: 0 auto;
-}
-.traps {
-  border: 0px solid rgba(0, 255, 0, 0.5);
-  padding: 2vh;
-  margin-bottom: 2vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-  
-.traps img {
-  max-width: 100px;
-  display: block;
-  margin: 0 auto;
-}
-.item {
-  border: 0px solid rgba(0, 255, 0, 0.5);
-  padding: 2vh;
-  margin-bottom: 2vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-  
-.item img {
-  max-width: 100px;
-  display: block;
-  margin: 0 auto;
-}
-.misc {
-  border: 0px solid rgba(0, 255, 0, 0.5);
-  padding: 2vh;
-  margin-bottom: 2vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-  
-.misc img {
-  max-width: 100px;
-  display: block;
-  margin: 0 auto;
-}
-.zones {
-  border: 0px solid rgba(0, 255, 0, 0.5);
-  padding: 2vh;
-  margin-bottom: 2vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-  
-.zones img {
-  max-width: 100px;
-  display: block;
-  margin: 0 auto;
-}
+
 .backstory.hidden {
   display: none;
 }
-  
+
 .timeline {
   display: flex;
   flex-direction: column;
   margin-top: 2vh;
 }
-  
+
 .timeline-event {
   padding: 1.5vh;
   background-color: rgba(0, 0, 0, 0.8);
   border-left: 3px solid #029923;
   margin-bottom: 2vh;
 }
-  
+
 a:hover {
   text-decoration: underline;
   color: #88ff88;
 }
+
 .sorting-label {
   margin-bottom: 1vh;
   font-size: 2.5vh;
   color: #029923;
   text-align: center;
 }
-  
+
 .sorting-buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-  
+
 .filter-button {
   margin: 1vh;
   padding: 1vh 2vw;
@@ -188,28 +138,29 @@ a:hover {
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
-  
+
 .filter-button:hover {
   background-color: rgba(0, 255, 0, 0.5);
   transform: scale(1.05);
 }
-  
-.character-list {
+
+.character-list, .weapons-list, .traps-list, .item-list, .zones-list, .misc-list, .missions-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
 }
+
 .timeline-container {
   overflow: hidden;
 }
-  
+
 .timeline {
   display: flex;
   flex-direction: column;
   margin-top: 2vh;
 }
-  
+
 .timeline-event {
   padding: 2vh;
   background-color: rgba(0, 0, 0, 0.8);
@@ -218,21 +169,21 @@ a:hover {
   position: relative;
   transition: transform 0.3s;
 }
-  
+
 .timeline-event:hover {
   transform: scale(1.02);
 }
-  
+
 .timeline-event h3 {
   color: #88ff88;
   text-shadow: 0 0 5px #77df77;
 }
-  
+
 .timeline-event ul {
   list-style-type: none;
   padding-left: 0;
 }
-  
+
 .timeline-event li {
   margin-bottom: 1vh;
 }
@@ -251,22 +202,15 @@ a:hover {
   clear: both;
   width: fit-content;
 }
-  
+
 .show-more-button:hover {
   background-color: rgba(0, 255, 0, 0.5);
   transform: scale(1.05);
 }
 
-.character-list .show-more-button, .weapons-list .show-more-button, .traps-list .show-more-button, .item-list .show-more-button, .zones-list .show-more-button, .misc-list .show-more-button {
+.character-list .show-more-button, .weapons-list .show-more-button, .traps-list .show-more-button, .item-list .show-more-button, .zones-list .show-more-button, .misc-list .show-more-button, .missions-list .show-more-button {
   position: absolute;
   bottom: -4vh;
-}
-
-.weapons-list, .traps-list, .item-list, .zones-list, .misc-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  position: relative;
 }
 
 .centered-image {
@@ -314,7 +258,7 @@ a:hover {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
-  display: none; 
+  display: none;
 }
 
 .back-to-top:hover {

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const sections = ['character', 'weapons', 'traps', 'item', 'zones', 'misc'];
+  const sections = ['character', 'weapons', 'traps', 'item', 'zones', 'missions', 'misc',  ];
   
   sections.forEach(section => {
     const list = document.querySelector(`.${section}-list`);
