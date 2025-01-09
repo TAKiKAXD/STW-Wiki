@@ -47,33 +47,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       const data = await response.json();
       console.log(`Data loaded for section ${section}:`, data);
-      const list = document.querySelector(`.${section}-list`);
-      if (!list) {
-        console.error(`List element for section ${section} not found.`);
-        return;
-      }
-      list.innerHTML = ''; // Clear existing content
-
-      data.items.forEach(item => {
-        console.log(`Creating item for ${section}:`, item);
-        const link = document.createElement('a');
-        link.href = item.page;
-        link.classList.add(section);
-        link.setAttribute('data-role', item.role);
-        link.setAttribute('data-name', item.name);
-        if (item.team) link.setAttribute('data-team', item.team);
-
-        const img = document.createElement('img');
-        img.src = item.image;
-        img.alt = item.name;
-
-        link.appendChild(img);
-        list.appendChild(link);
-        console.log(`Appended item to ${section}-list:`, link);
-      });
+      createSectionElements(section, data.items);
     } catch (error) {
       console.error(`Failed to load ${section} data:`, error);
     }
+  };
+
+  const createSectionElements = (section, items) => {
+    const list = document.querySelector(`.${section}-list`);
+    if (!list) {
+      console.error(`List element for section ${section} not found.`);
+      return;
+    }
+    list.innerHTML = ''; // Clear existing content
+
+    items.forEach(item => {
+      console.log(`Creating item for ${section}:`, item);
+      const link = document.createElement('a');
+      link.href = item.page;
+      link.classList.add(section);
+      link.setAttribute('data-role', item.role);
+      link.setAttribute('data-name', item.name);
+      if (item.team) link.setAttribute('data-team', item.team);
+
+      const img = document.createElement('img');
+      img.src = item.image;
+      img.alt = item.name;
+
+      link.appendChild(img);
+      list.appendChild(link);
+      console.log(`Appended item to ${section}-list:`, link);
+    });
   };
 
   const sections = ['character', 'weapons', 'traps', 'item', 'zones', 'missions', 'misc'];
