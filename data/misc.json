@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "page": "./Pages/misc/",
+      "role": "other",
+      "name": "misc-name",
+      "image": "./images/misc/"
+    }
+    
+  ]
+}

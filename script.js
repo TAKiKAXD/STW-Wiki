@@ -36,8 +36,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const sections = ['character', 'weapons', 'traps', 'item', 'zones', 'missions', 'misc',  ];
+  const loadSectionData = async (section) => {
+    try {
+      console.log(`Loading data for section: ${section}`);
+      const response = await fetch(`./data/${section}.json`);
+      const data = await response.json();
+      console.log(`Data loaded for section ${section}:`, data);
+      const list = document.querySelector(`.${section}-list`);
+      list.innerHTML = ''; 
+
+      data.items.forEach(item => {
+        console.log(`Creating item for ${section}:`, item);
+        const link = document.createElement('a');
+        link.href = item.page;
+        link.classList.add(section);
+        link.setAttribute('data-role', item.role);
+        link.setAttribute('data-name', item.name);
+        if (item.team) link.setAttribute('data-team', item.team);
+
+        const img = document.createElement('img');
+        img.src = item.image;
+        img.alt = item.name;
+
+        link.appendChild(img);
+        list.appendChild(link);
+      });
+    } catch (error) {
+      console.error(`Failed to load ${section} data:`, error);
+    }
+  };
+
+  const sections = ['character', 'weapons', 'traps', 'item', 'zones', 'missions', 'misc'];
   
+  sections.forEach(section => {
+    loadSectionData(section);
+  });
+
   sections.forEach(section => {
     const list = document.querySelector(`.${section}-list`);
     const items = list.querySelectorAll(`.${section}`);

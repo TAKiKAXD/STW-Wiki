@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "page": "./Pages/chars/Sleuth.html",
+      "role": "hero",
+      "team": "constructor",
+      "name": "Sleuth",
+      "image": "./images/chars/Sleuth.png"
+    }
+    
+  ]
+}

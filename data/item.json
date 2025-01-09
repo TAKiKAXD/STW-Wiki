@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "page": "./Pages/items/",
+      "role": "other",
+      "name": "item-name",
+      "image": ""
+    }
+    
+  ]
+}

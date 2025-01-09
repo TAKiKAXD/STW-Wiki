@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "page": "./Pages/traps/",
+      "role": "floor",
+      "name": "trap-name",
+      "image": "./images/traps/"
+    }
+    
+  ]
+}

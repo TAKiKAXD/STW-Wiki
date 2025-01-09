@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "page": "./Pages/weapons/",
+      "role": "assault",
+      "name": "weapon-name",
+      "image": "./images/weapons/"
+    }
+    
+  ]
+}

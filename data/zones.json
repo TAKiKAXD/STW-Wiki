@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "page": "./Pages/zones/",
+      "role": "",
+      "name": "zone-name",
+      "image": "./images/zones/"
+    }
+    
+  ]
+}
